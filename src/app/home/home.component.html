@@ -1,0 +1,193 @@
+<div class="w-full min-h-screen bg-black relative overflow-x-hidden">
+  <!-- Barra de navegación -->
+  <div class="w-full h-20 bg-red-500 top-0 z-40 relative">
+    <section
+      class="absolute top-[10%] h-[80%] w-[70%] left-[45%] flex flex-row gap-[5%] z-10 items-center justify-center"
+    >
+      <p class="text-white font-google-codepro text-xl">Mapa</p>
+      <p class="text-white font-google-codepro text-xl">Línea Tiempo</p>
+      <p class="text-white font-google-codepro text-xl">Consiencia</p>
+      <p class="text-white font-google-codepro text-xl">Redes</p>
+    </section>
+    <img
+      src="https://www.lapatilla.com/wp-content/uploads/2015/11-09/EFECTO-INVERNADERO.jpg"
+      alt=""
+      class="object-cover h-full w-full custom-opacity"
+    />
+    <div
+      class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-35"
+    ></div>
+  </div>
+
+  <!-- Redes sociales -->
+  <div
+    class="w-full h-12 bg-custom-nasa flex flex-row gap-[2%] justify-end items-center pr-[2%]"
+  >
+    <img src="assets/logo-www.svg" alt="" class="h-8 w-8" />
+    <img src="assets/logo-twitter.svg" alt="" class="h-8 w-8" />
+    <img src="assets/logo-instagra.svg" alt="" class="h-8 w-8" />
+    <img src="assets/logo-facebook.svg" alt="" class="h-8 w-8" />
+    <img src="assets/logo-bd.svg" alt="" class="h-8 w-8" />
+  </div>
+
+  <!-- Logo (independiente, siempre visible pero no fijo) -->
+  <div
+    class="h-[12%] w-[12%] absolute top-[2%] left-[1%] z-50 flex items-center justify-center"
+  >
+    <img
+      src="assets/logoNasa.png"
+      alt="Logo de la NASA"
+      class="h-full w-full object-cover"
+    />
+  </div>
+  <!-- Título de la idea (independiente, siempre visible pero no fijo) -->
+  <div
+    class="h-20 w-[55%] absolute top-[39%] left-[22.5%] bg-custom-nasa z-50 border-2 rounded-md justify-center items-center flex"
+  >
+    <p class="font-bold font-google-codepro text-white text-3xl">
+      EL IMPACTO GLOBAL DEL CAMBIO CLIMÁTICO
+    </p>
+  </div>
+
+  <!-- READ : APARTADO DEL VIDEO -->
+  <div class="flex justify-center items-center min-h-[75vh]">
+    <div class="relative w-full max-w-[100%] h-[450px]">
+      <vg-player (onPlayerReady)="onPlayerReady($event)">
+        <vg-overlay-play></vg-overlay-play>
+        <vg-buffering vgFor="singleVideo"></vg-buffering>
+        <video
+          [vgMedia]="$any(media)"
+          src="../../assets/videoPrincipal.mp4"
+          id="singleVideo"
+          muted
+          autoplay
+          #media
+          preload="auto"
+          crossorigin
+          class="absolute inset-0 w-full h-full object-cover"
+        ></video>
+      </vg-player>
+    </div>
+  </div>
+  <!-- Opciones múltiples -->
+  <div class="w-full min-h-[90vh] bg-pink-400 relative">
+    <img
+      src="https://wallpapers.com/images/hd/global-warming-pictures-1920-x-1080-hknt4onr2l6islh6.jpg"
+      alt=""
+      class="object-cover h-full w-full custom-opacity"
+    />
+    <div
+      class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-55"
+    ></div>
+    <p
+      class="text-white text-2xl font-google-codepro font-bold absolute top-[4%] left-[30%]"
+    >
+      ¡Un equipo preparado para impactar!
+    </p>
+    <section
+      class="h-[80%] w-full z-10 top-[12%] absolute flex flex-row gap-[3%] px-[10%]"
+    >
+      <div
+        class="relative group h-[100%] w-[32%] shadow-white-3d flex flex-col items-center justify-center"
+      >
+        <div class="relative h-full w-full rounded-md">
+          <img
+            src="assets/optionCatografia.jpg"
+            alt=""
+            class="w-full h-full object-cover rounded-sm"
+          />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <p
+              class="text-white font-google-codepro font-bold text-2xl text-center transition-opacity duration-300 group-hover:opacity-0"
+              style="text-shadow: 3px 3px black"
+            >
+              Monitoreo Regional de Emisiones
+            </p>
+          </div>
+        </div>
+        <div
+          (click)="irToMapa()"
+          class="cursor-pointer rounded-md flex-col gap-[2%] absolute inset-0 bg-black bg-opacity-0 text-white flex items-center justify-center opacity-0 group-hover:bg-opacity-75 group-hover:opacity-100 transition duration-300"
+        >
+          <p
+            class="text-white font-google-codepro font-bold text-2xl text-center"
+          >
+            Monitoreo Regional de Emisiones
+          </p>
+          <p class="text-white font-google-codepro text-xl text-center">
+            Visualiza emisiones de CO2, metano y otros gases por región. Usa un
+            mapa interactivo para explorar los impactos de incendios y
+            actividades humanas.
+          </p>
+        </div>
+      </div>
+
+      <div
+        (click)="irToCronologia()"
+        class="cursor-pointer relative group h-[100%] w-[32%] shadow-white-3d flex flex-col items-center justify-center"
+      >
+        <div class="relative h-full w-full rounded-md">
+          <img
+            src="assets/optionCronologia.jpg"
+            alt=""
+            class="w-full h-full object-cover rounded-sm"
+          />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <p
+              class="text-white font-google-codepro font-bold text-2xl text-center transition-opacity duration-300 group-hover:opacity-0"
+              style="text-shadow: 3px 3px black"
+            >
+              Cronología del Cambio Climático
+            </p>
+          </div>
+        </div>
+        <div
+          class="rounded-md flex-col gap-[2%] absolute inset-0 bg-black bg-opacity-0 text-white flex items-center justify-center opacity-0 group-hover:bg-opacity-75 group-hover:opacity-100 transition duration-300"
+        >
+          <p
+            class="text-white font-google-codepro font-bold text-2xl text-center"
+          >
+            Cronología del Cambio Climático
+          </p>
+          <p class="text-white font-google-codepro text-xl text-center">
+            Recorre la evolución de las emisiones de gases de efecto invernadero
+            y su impacto en el clima a lo largo del tiempo.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="relative group h-[100%] w-[32%] shadow-white-3d flex flex-col items-center justify-center"
+      >
+        <div class="relative h-full w-full rounded-md">
+          <img
+            src="assets/optionConsientisacion.jpg"
+            alt=""
+            class="w-full h-full object-cover rounded-sm"
+          />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <p
+              class="text-white font-google-codepro font-bold text-2xl text-center transition-opacity duration-300 group-hover:opacity-0"
+              style="text-shadow: 3px 3px black"
+            >
+              Conciencia Climática y Soluciones
+            </p>
+          </div>
+        </div>
+        <div
+          class="rounded-md flex-col gap-[2%] absolute inset-0 bg-black bg-opacity-0 text-white flex items-center justify-center opacity-0 group-hover:bg-opacity-75 group-hover:opacity-100 transition duration-300"
+        >
+          <p
+            class="text-white font-google-codepro font-bold text-2xl text-center"
+          >
+            Conciencia Climática y Soluciones
+          </p>
+          <p class="text-white font-google-codepro text-xl text-center">
+            Descubre métodos y eventos clave que impulsan la conciencia
+            climática y explora soluciones globales para mitigar sus efectos.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

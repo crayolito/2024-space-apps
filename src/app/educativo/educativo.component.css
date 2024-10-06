@@ -1,0 +1,15 @@
+.custom-shadow {
+  @apply shadow-lg;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5), -10px -10px 30px rgba(0, 0, 0, 0.2);
+}
+
+img {
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+
+  animation-timeline: --image;
+  animation-name: show;
+
+  animation-range: entry 25% cover 30%;
+  animation-fill-mode: both;
+ }
