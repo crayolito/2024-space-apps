@@ -52,7 +52,7 @@ export default class HomeComponent implements AfterViewInit {
   }
 
   irToMapa(): void {
-    // this.router.navigate(['/mapa']);
+    window.location.href = 'https://staging.d1iy340myko62q.amplifyapp.com/';
   }
 
   irToCronologia(): void {
