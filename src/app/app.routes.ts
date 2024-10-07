@@ -21,12 +21,12 @@ export const routes: Routes = [
       import('./space-lte/space-lte.component').then((m) => m.default),
   },
   {
-    path: '/home',
+    path: '',
     redirectTo: '/home',
     pathMatch: 'full',
   },
   {
     path: '**',
-    redirectTo: 'home',
+    redirectTo: '/home',
   },
 ];
