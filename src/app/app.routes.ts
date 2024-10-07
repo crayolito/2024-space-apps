@@ -21,7 +21,7 @@ export const routes: Routes = [
       import('./space-lte/space-lte.component').then((m) => m.default),
   },
   {
-    path: '/home',
+    path: '/',
     redirectTo: '/PaginaPrincipal',
     pathMatch: 'full',
   },
