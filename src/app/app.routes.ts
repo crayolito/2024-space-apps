@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 //
 export const routes: Routes = [
   {
-    path: 'PaginaPrincipal',
+    path: 'home',
     loadComponent: () => import('./home/home.component').then((m) => m.default),
   },
   {
@@ -21,12 +21,12 @@ export const routes: Routes = [
       import('./space-lte/space-lte.component').then((m) => m.default),
   },
   {
-    path: '/',
-    redirectTo: '/PaginaPrincipal',
+    path: 'home',
+    redirectTo: '/home',
     pathMatch: 'full',
   },
   {
     path: '**',
-    redirectTo: '/PaginaPrincipal',
+    redirectTo: '/home',
   },
 ];
