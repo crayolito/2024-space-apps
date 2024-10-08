@@ -21,7 +21,7 @@ export const routes: Routes = [
       import('./space-lte/space-lte.component').then((m) => m.default),
   },
   {
-    path: 'home',
+    path: '',
     redirectTo: '/home',
     pathMatch: 'full',
   },
@@ -30,3 +30,13 @@ export const routes: Routes = [
     redirectTo: '/home',
   },
 ];
+
+// {
+//   "glob": "**/*",
+//   "input": "public"
+// },
+// {
+//   "glob": "**/*",
+//   "input": "src/assets",
+//   "output": "/assets"
+// }
